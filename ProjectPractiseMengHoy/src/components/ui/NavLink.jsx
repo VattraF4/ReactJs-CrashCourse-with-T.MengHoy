@@ -1,7 +1,7 @@
 import React from "react";
 import User from "./User";
 
-function NavLink({ user , isSignOut }) {
+function NavLink() {
   return (
     <ul className="flex items-center gap-6 px-6 py-4 text-black">
       <li>
@@ -28,7 +28,7 @@ function NavLink({ user , isSignOut }) {
           Services
         </a>
       </li>
-      <User user={user} isSignOut={isSignOut} />
+      <User />
     </ul>
   );
 }
