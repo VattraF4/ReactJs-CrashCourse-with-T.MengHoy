@@ -1,12 +1,14 @@
-import { useNavBarContext } from "./NavBar";
+import { useGlobalContext } from "../../context/Context";
+
 function User() {
-  const { user, signOut } = useNavBarContext();
-  return user ? ( 
+  const { user, setUser } = useGlobalContext();
+
+  return user ? (
     <div className="flex flex-row flex-2 gap-3 items-center">
       <span>Welcome, {user?.name}</span>
       <button
         className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-        onClick={signOut}
+        onClick={() => setUser(null)}
       >
         Sing Out
       </button>
