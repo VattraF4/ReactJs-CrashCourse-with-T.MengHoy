@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
-import { navBarContext } from "./NavBar";
-
+import { useNavBarContext } from "./NavBar";
 function User() {
-  const { user, signOut } = useContext(navBarContext);
-  // return null;
-  return user ? (
+  const { user, signOut } = useNavBarContext();
+  return user ? ( 
     <div className="flex flex-row flex-2 gap-3 items-center">
       <span>Welcome, {user?.name}</span>
       <button

@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Ra Vattra",
+    "username": "vattra_f4",
+    "role": {
+      "name": "admin",
+      "permission": [
+        { "id": 1, "name": "create" },
+        { "id": 2, "name": "delete" },
+        { "id": 3, "name": "update" },
+        { "id": 3, "name": "view" }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Yan Pich",
+    "username": "vattra_f4",
+    "role": {
+      "name": "usere",
+      "permission": [
+        { "id": 1, "name": "create" },
+        { "id": 3, "name": "view" }
+      ]
+    }
+  }
+]

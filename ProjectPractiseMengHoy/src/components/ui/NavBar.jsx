@@ -1,7 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import logo from "../../assets/react.svg";
 import NavLink from "./NavLink";
-export const navBarContext = createContext();
+ 
+const navBarContext = createContext();
+export const useNavBarContext = () => useContext(navBarContext);
 
 function NavBar() {
   const [user, setUser] = useState({ name: "John Doe" });
