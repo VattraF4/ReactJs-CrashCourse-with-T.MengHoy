@@ -9,6 +9,12 @@ const reducer = (state, action) => {
   if(action.type === "CLEAR_ALL") {
     return { ...state, users: [] };
   }
+  if(action.type === "RESET") {
+    return { ...state, users: people };
+  }
+  if(action.type === "REMOVE") {
+    return { ...state, users: state.users.filter((u) => u.id !== action.payload) };
+  }
   // console.log("action", action);
   // return ;
 };
@@ -16,8 +22,12 @@ function UserLists() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log("state", state);
+
   function handleClearAll() {
     dispatch({ type: "CLEAR_ALL" });
+  }
+  function handleReset(){
+    dispatch({ type: "RESET" });
   }
 
   return (
@@ -27,7 +37,7 @@ function UserLists() {
           <Users
             {...user}
             key={user.id}
-            onRemove={() => setUsers(users.filter((u) => u.id !== user.id))}
+            onRemove={() => dispatch({ type: "REMOVE", payload: user.id })}
           />
         ))}
         <button
@@ -35,6 +45,12 @@ function UserLists() {
           onClick={() => handleClearAll()}
         >
           Clear All
+        </button>
+        <button
+          className="w-full bg-[#1976d2] hover:bg-[#1565c0] text-white py-3 rounded-lg font-medium text-lg mt-2 transition-colors"
+          onClick={() => handleReset()}
+        >
+          Reset
         </button>
       </div>
     </div>
