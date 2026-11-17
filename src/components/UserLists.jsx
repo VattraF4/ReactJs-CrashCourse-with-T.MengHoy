@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import Users from "./Users";
 import people from "../assets/data";
-
+const initialState = {
+  users: people,
+  isLoading: true,
+};
+const reducer = (state, action) => {
+  return ;
+};
 function UserLists() {
-  const [users, setUsers] = useState(people);
+  // const [users, setUsers] = useState(people);
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(state);
+  useReducer(reducer);
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#2b2f32] p-4">
       <div className="w-full max-w-md bg-[#535353] p-6 rounded-2xl shadow-lg">
-        {users.map((user) => (
+        {state.users.map((user) => (
           <Users
             {...user}
             key={user.id}
