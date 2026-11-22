@@ -1,15 +1,12 @@
-import {
-  createBrowserRouter,
-  Outlet,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./App.css";
-import { Home, About, Service, Layout } from "./pages";
+import { Home, About, Service, Layout,Error404 } from "./pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
+    element: <Layout />,
+    errorElement: <Error404 />,
     children: [
       {
         index: true,
@@ -23,7 +20,7 @@ const router = createBrowserRouter([
         path: "services",
         element: <Service />,
       },
-    ]
+    ],
   },
 ]);
 function App() {
