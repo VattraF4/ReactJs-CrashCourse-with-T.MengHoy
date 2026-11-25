@@ -1,7 +1,6 @@
 import {
   createBrowserRouter,
   createRoutesFromElements,
-  Outlet,
   Route,
   RouterProvider,
 } from "react-router-dom";
@@ -12,6 +11,7 @@ import RootLayout from "./components/layout/RootLayout";
 import AboutLayout from "./components/layout/AboutLayout";
 import UserLayout from "./components/layout/UserLayout";
 import User from "./pages/user/User";
+import { userLoader } from "./pages/user/userLoader";
 
 // const router = createBrowserRouter([
 //   {
@@ -60,8 +60,14 @@ const routers = createBrowserRouter(
       </Route>
       <Route path="services" element={<Service />} />
       <Route path="users" element={<UserLayout />}>
-        <Route path=":id" element={<User />} />
-
+        <Route
+          index
+          element={<User />}
+          loader={userLoader} // loader function to fetch user data
+          hydrateFallbackElement={
+            <p className="text-slate-300">Loading user profiles...</p>
+          }
+        />
       </Route>
     </Route>,
   ),
