@@ -1,5 +1,4 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function AboutLayout() {
   return (
@@ -19,24 +18,43 @@ function AboutLayout() {
             aria-label="About navigation"
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <Link
+            <NavLink
               to="."
-              className="rounded-lg bg-blue-500 px-6 py-3 text-center font-semibold text-white transition hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-900"
+              end
+              className={({ isActive }) =>
+                `rounded-lg px-6 py-3 text-center font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                  isActive
+                    ? "bg-blue-500 text-white hover:bg-blue-400"
+                    : "border border-slate-600 text-slate-200 hover:border-blue-400 hover:text-white"
+                }`
+              }
             >
               Our Vision
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="mission"
-              className="rounded-lg border border-slate-600 px-6 py-3 text-center font-semibold text-slate-200 transition hover:border-blue-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-900"
+              className={({ isActive }) =>
+                `rounded-lg px-6 py-3 text-center font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                  isActive
+                    ? "bg-blue-500 text-white hover:bg-blue-400"
+                    : "border border-slate-600 text-slate-200 hover:border-blue-400 hover:text-white"
+                }`
+              }
             >
               Our Mission
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="goals"
-              className="rounded-lg border border-slate-600 px-6 py-3 text-center font-semibold text-slate-200 transition hover:border-blue-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-900"
+              className={({ isActive }) =>
+                `rounded-lg px-6 py-3 text-center font-semibold transition focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-slate-900 ${
+                  isActive
+                    ? "bg-blue-500 text-white hover:bg-blue-400"
+                    : "border border-slate-600 text-slate-200 hover:border-blue-400 hover:text-white"
+                }`
+              }
             >
               Our Goals
-            </Link>
+            </NavLink>
           </nav>
           <div className="mt-8 border-t border-slate-700 pt-6 text-lg font-semibold text-slate-100">
             <Outlet />

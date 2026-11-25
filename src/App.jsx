@@ -20,7 +20,6 @@ const router = createBrowserRouter([
         element: <AboutLayout />,
         children: [
           {
-            // path: "vision",
             index: true,
             element: <h4>Our Vision</h4>,
           },
