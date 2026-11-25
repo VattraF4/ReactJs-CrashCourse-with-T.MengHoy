@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -15,15 +16,18 @@ function Footer() {
           className="flex flex-wrap gap-x-6 gap-y-3 text-sm"
           aria-label="Footer navigation"
         >
-          <a href="/" className="transition-colors hover:text-white">
+          <Link to="/" className="transition-colors hover:text-white">
             Home
-          </a>
-          <a href="#about" className="transition-colors hover:text-white">
+          </Link>
+          <Link to="/about" className="transition-colors hover:text-white">
             About
-          </a>
-          <a href="#contact" className="transition-colors hover:text-white">
+          </Link>
+          <Link to="/services" className="transition-colors hover:text-white">
+            Service
+          </Link>
+          <Link to="/contact" className="transition-colors hover:text-white">
             Contact
-          </a>
+          </Link>
         </nav>
       </div>
 
