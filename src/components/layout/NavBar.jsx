@@ -15,16 +15,22 @@ function NavBar() {
             Home
           </li>
         </Link>
+         <Link to="/about">
+          <li className="cursor-pointer font-medium transition-colors hover:text-blue-600">
+            About
+          </li>
+        </Link>
         <Link to="/services">
           <li className="cursor-pointer font-medium transition-colors hover:text-blue-600">
             Services
           </li>
         </Link>
-        <Link to="/about">
+        <Link to="/users">
           <li className="cursor-pointer font-medium transition-colors hover:text-blue-600">
-            About
+            Users
           </li>
         </Link>
+       
       </ul>
     </nav>
   );

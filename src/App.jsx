@@ -10,6 +10,8 @@ import { Home, Service, Error404 } from "./pages";
 
 import RootLayout from "./components/layout/RootLayout";
 import AboutLayout from "./components/layout/AboutLayout";
+import UserLayout from "./components/layout/UserLayout";
+import User from "./pages/user/User";
 
 // const router = createBrowserRouter([
 //   {
@@ -57,6 +59,10 @@ const routers = createBrowserRouter(
         <Route path="goals" element={<h4>Our Goals</h4>} />
       </Route>
       <Route path="services" element={<Service />} />
+      <Route path="users" element={<UserLayout />}>
+        <Route path=":id" element={<User />} />
+
+      </Route>
     </Route>,
   ),
 );
